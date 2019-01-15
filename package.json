@@ -4,14 +4,14 @@
   "description": "iterable RegExp.prototype.exec()",
   "scripts": {
     "build": "rollup -c",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "main": "dist/iterable-exec.umd.js",
   "module": "dist/iterable-exec.esm.js",
   "jsnext:main": "dist/iterable-exec.esm.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RyoNkmr/IterableExec.git"
+    "url": "git+https://github.com/RyoNkmr/iterable-exec.git"
   },
   "keywords": [
     "iterable",
@@ -22,11 +22,16 @@
   "author": "RyoNkmr",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/RyoNkmr/IterableExec/issues"
+    "url": "https://github.com/RyoNkmr/iterable-exec/issues"
   },
-  "homepage": "https://github.com/RyoNkmr/IterableExec#readme",
+  "homepage": "https://github.com/RyoNkmr/iterable-exec#readme",
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
     "jest": "^23.6.0",
-    "rollup": "^1.1.0"
+    "rollup": "^1.1.0",
+    "rollup-plugin-babel": "^4.3.0"
   }
 }

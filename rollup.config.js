@@ -1,7 +1,9 @@
 process.env.INCLUDE_DEPS === 'true'
 process.env.BUILD === 'production'
 
-const pkg = require('./package.json')
+  import babel from 'rollup-plugin-babel'
+import pkg from './package.json'
+
 const banner = `/*!
   * ${pkg.name} v${pkg.version}
   *
@@ -10,17 +12,21 @@ const banner = `/*!
   */`
 
 export default {
-  input: 'index.js',
+  input: 'src/index.js',
   output: [
     {
+      banner,
       file: 'dist/iterable-exec.umd.js',
       format: 'umd',
       name: 'IterableExec',
     },
     {
+      banner,
       file: 'dist/iterable-exec.esm.js',
       format: 'esm',
     },
   ],
-  banner,
+  plugins: [
+    babel()
+  ],
 }
